@@ -1,0 +1,172 @@
+* {
+    // 禁用长按选择文字
+    user-select: none;
+}
+$borderTest:0px solid #000;
+body {
+    // 阻止連點放大
+    touch-action: manipulation;
+    user-select: none;
+}
+.main {
+    // height: 2000px;
+    height: 100vh;
+    background: #88d6df;
+    display: flex;
+    @media screen and(max-width:768px) {
+        height: 100%;
+    }
+}
+.pointer-none {
+    pointer-events: none;
+}
+.game_box {
+    // border: 1px solid black;
+    width: 450px;
+    height: 700px;
+    margin: auto;
+    background-image: url(../img/main_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+    @media screen and(max-width:768px) {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+    }
+    
+}
+.title{
+    width: 80%;
+    margin: 0 auto;
+}
+.eggBox{
+    width: 100%;
+    margin:0 auto 0px;
+    border: $borderTest;
+    position: relative;
+    text-align: center;
+    height: 350px;
+    transform-origin: 50% 100%;
+    
+    @media screen and(max-width:767px) {
+        height: 75vw;
+    }
+    .drAndEgg{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    overflow: hidden;
+
+    }
+    .dragon{
+        position: absolute;
+        top: 33%;
+        left: 38%;
+        width: 24%;
+        opacity: 0;
+    }
+
+        .eggImg{
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 400%;
+            max-width: unset;
+        }
+    
+    
+}
+
+.start{
+    background-image: url(../img/start.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: $borderTest;
+    padding: 0px 30px 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+    a{
+        // text-decoration: none;
+        &:hover{
+        text-decoration: none;
+
+        }
+    }
+
+    span{
+        font-size: 40px;
+        font-weight: bold;
+        color: #fff;
+        // text-decoration: none;
+        
+    }
+}
+.egg{
+    position: absolute;
+    opacity: 0;
+}
+.eggLeft{
+    left: 25%;
+    top: 7%;
+    width: 50%;
+    z-index: 2;
+
+}
+.eggLeft2{
+    left: 24%;
+    top: 7%;
+    width: 50%;
+}
+
+.eggright{
+    right: 25%;
+    top: 7%;
+    width: 50%;
+    z-index: 2;
+
+}
+.eggright2{
+    right: 25%;
+    top: 7%;
+    width: 50%;
+}
+
+.goingAni{
+    filter: grayscale(1);
+    pointer-events: none;
+}
+
+.overGmaeDragon{
+    animation: passAni 0.6s linear infinite alternate;
+
+}
+.overGmaeBtn{
+    animation: trues 0.6s linear infinite alternate;
+}
+
+@keyframes trues {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes passAni {
+    0% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
